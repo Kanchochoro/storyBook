@@ -1,0 +1,28 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "This is a storybook web",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js -e hbs,js,css"
+  },
+  "author": "Naraeain Btr",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "hbs": "^4.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.10",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.17",
+    "validator": "^13.5.2"
+  }
+}

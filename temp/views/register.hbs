@@ -1,0 +1,88 @@
+<div class="register-container">
+    <div class="card">
+        <div class="card-content">
+
+            <h5><i class="fas fa-users"></i>Account Registration</h5>
+            <div class="row">
+                <form class="col s12" method="post" action="/account/register" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate" name="firstname">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate" name="lastname">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" name="email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="phone" type="text" class="validate" name="phone">
+                            <label for="phone">Phone</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="password" type="password" class="validate" name="password">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="cpassword" type="password" class="validate" name="cpassword">
+                            <label for="cpassword">C-Password</label>
+                        </div>
+                    </div>
+                    <div class = "row">
+               <div class="col s8">
+               <div class = "file-field input-field">
+                  <div class = "btn">
+                     <span>Choose Image</span>
+                     <input required type = "file" name="profileImage"  onchange="ShowImagePreview(this,document.getElementById('myImg'))" />
+                  </div>
+                  
+                  <div class = "file-path-wrapper">
+                     <input class = "file-path validate" type = "text" placeholder = "Upload Your image" />
+                  </div>
+               </div>    
+            </div>
+            <div class="col s4" id="preImage">
+           <img src="../images/user.jpeg" id="myImg" width="100%" height="80px">
+            </div>
+            </div>
+                    <button class="btn waves-effect waves-light " type="submit">Register
+
+                    </button>
+
+                    <p> I have an account <a href="/account/login">Login....</a></p>
+                </form>
+                {{#if error}}
+                <p class="red-text center">{{error}}</p>
+                {{/if}}
+
+            </div>
+        </div>
+        <script>
+ function ShowImagePreview(imageUploader,previewImage){
+   //  alert("hello");
+if(imageUploader.files && imageUploader.files[0]){
+ var reader=new FileReader();
+  reader.onload=function(e){
+     // alert(e.target);
+      previewImage.setAttribute("src",e.target.result);
+$(previewImage).attr("src",e.targer.result);
+};
+
+reader.readAsDataURL(imageUploader.files[0]);
+
+}
+}
+        </script>
+    </div>
+</div>

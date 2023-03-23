@@ -1,0 +1,34 @@
+<div class="container">
+    <h4>Welcome  {{loggedUser.firstname}} {{loggedUser.lastname}}</h4>
+    {{>add_button}}
+    {{#if stories}}
+   {{!-- // {{stories}} --}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each stories}}
+            <tr>
+                <td><a href="post/{{_id}}">{{turncate title 20}}</a></td>
+                <td>{{formatDate createdAt "MMM Do YY, h:mma"}}</td>
+                <td><span class="dash-status">{{status}}</span></td>
+                <td > 
+                    {{{showEditAndDeleteIcon user._id ../loggedUser._id _id}}}
+                    <a href="post/fav/{{_id}}" class="small btn-small waves-effect pink"><i class="fas fa-heart"></i></a>
+                    </td>
+                
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <p>You have no created any stories</p>
+    {{/if}}
+
+</div>

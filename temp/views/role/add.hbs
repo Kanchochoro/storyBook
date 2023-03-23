@@ -1,0 +1,20 @@
+<div class="container">
+    <h4 class="center">Add role to your Webiste</h4>
+   
+    <form method="post" action="/role/add" class="col s10">
+    <div class="row">
+        <div class="input-field">
+            <input type="text" name="role" id="role">
+            <label for="role">Role</label>
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Add Role" class="btn">
+        
+    </div>
+    </form>
+     {{#if error}}
+    <p class="red-text center">{{error}}</p>
+    {{/if}}
+
+</div>

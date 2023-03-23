@@ -1,0 +1,15 @@
+<div class="container">
+    <h4 class="center">Title : {{story.title}}</h4>
+    <div class="card col m8">
+        <div class="card-content">
+            <p class="right-align" >Date : {{formatDate story.createdAt "MMM Do YY, h:mma"}}</p>
+            <p class="left-align">Story :</p>
+            <p style="text-indent:20%;line-height:35px;padding:5px" class="highlight">{{story.body}}</p>
+        <div class="m3">
+            <p><span>Author : {{story.user.firstname}}</span><span class="right">Status : {{story.status}}</span></p>
+            <h5>Read More  From <a href="/user/post/{{story.user._id}}">{{story.user.firstname}} {{story.user.lastname}}</a></h5>
+        </div>
+   
+        </div>
+    </div>
+</div>

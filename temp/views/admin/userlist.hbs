@@ -1,0 +1,28 @@
+<div class="container">
+  
+   
+    
+    <h4>Application user list</h4>
+    {{#if users}}
+    <table class="striped">
+        <thead>
+            <td>Full Name</td>
+            <td>Email</td>
+            <td>add Role</td>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{firstname}} {{lastname}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <a href="/admin/addRole/{{_id}}" class="small btn-small waves-effect yellow"><i class="fa fa-plus"></i></a>
+                     <a href="/admin/user/delete/{{_id}}" class="small btn-small waves-effect red"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h5>No user to show </h5>
+    {{/if}}
+</div>

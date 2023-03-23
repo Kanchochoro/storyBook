@@ -1,0 +1,27 @@
+<div class="container">
+   {{>add_button}}
+{{#if roles}}
+ <h4>You have following role to control your project.</h4>
+  <table class="striped">
+      <thead>
+          <th>Role</th>
+          <th>CreateAt</th>
+          <th></th>
+      </thead>
+      <tbody>
+{{#each roles}}
+  <tr>
+      <td>{{role}}</td>
+      <td>{{formatDate createdAt "MMMM / Do / YYYY"}}</td>
+      <td> <a href="role/delete/{{_id}}" class="small btn-small waves-effect red"><i class="fas fa-trash"></i></a></td>
+  </tr>
+{{/each}}
+
+      </tbody>
+  </table>
+ 
+
+{{else}}
+<h3>No roles added</h3>
+{{/if}}
+</div>

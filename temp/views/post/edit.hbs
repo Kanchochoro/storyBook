@@ -1,0 +1,36 @@
+<div class="container">
+  <h4 class="center">Edit Your Story</h4>
+  {{#if post}}
+  {{!-- {{post}} --}}
+  <form method="post" action="/post/edit/{{post._id}}" class="col s10">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="title" id="title" value="{{post.title}}">
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <label>Status</label>
+      {{{isStatusPublic post.status}}}
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <h5>Tell Us Your Stroy:</h5>
+        <textarea id="body" name="body">{{post.body}}</textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Save" class="btn">
+      <a href="/dashboard" class="btn orange">Cancle</a>
+    </div>
+      {{!-- {{#if error}}
+    <p class="red-text center">{{error}}</p>
+    {{/if}} --}}
+  </form>
+  {{#if error}}
+  <p class="red-text center">{{error}}</p>
+  {{/if}}
+
+  {{/if}}
+
+</div>

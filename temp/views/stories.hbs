@@ -1,0 +1,35 @@
+<div class="container">
+    <h4 class="center">Stories Collection</h4>
+    <div class="divider"></div>
+<div class="row">
+   {{!-- {{loggedUser._id}} --}}
+    {{#if stories}}
+     {{#each stories}}
+     <div class="col s12 m4">
+         <div class="card">
+             <div class="card-image">
+                 {{!-- to do edit icon --}}
+                 {{{editIcon user._id _id ../loggedUser._id}}}
+                 {{!-- {{editIcon user  ../user}} --}}
+             </div>
+             <div class="card-content center-align">
+                 <h5>{{turncate title 15}}</h5>
+                {{!-- <p> {{../loggedUser._id}}</p> --}}
+                 <p>{{turncate body 30}}</p>
+                 <br>
+                 <div class="chip">
+                     <img src="{{user.image}}" alt="">
+                        <a href="/user/post/{{user._id}}">{{user.firstname}}</a>
+                 </div>
+             </div>
+             <div class="card-action center-align">
+                    <a href="/post/{{_id}}" class="btn grey">Read More</a>
+             </div>
+         </div>
+     </div>
+     {{/each}}
+    {{else}}
+    <p class="center">No stories to display.</p>
+    {{/if}}
+</div>
+</div>

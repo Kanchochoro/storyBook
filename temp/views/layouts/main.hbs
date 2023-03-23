@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Home</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/all.min.css">
+</head>
+
+<body style="background:#d8d5d5;">
+  
+    {{!-- <nav>
+  <div class="nav-wrapper light-green">
+    <a href="/" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down ">
+      <li><a href="/secret">Secret</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav --}}
+<nav>
+    <div class="nav-wrapper blue-grey">
+      <a href="/" class="brand-logo nav-logo">storyBook</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/post/fav" ><i class="fas fa-heart">fav</i></a></li>
+        <li><a href="/post/add">+ story</a></li>
+        <li><a href="/post">Posts</a></li>
+        <li><a href="/account/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/post/fav"><i class="fas fa-heart">favovirte</i></a></li>
+    <li><a href="/post/add">+ story</a></li>
+   <li><a href="/post">Posts</a></li>
+        <li><a href="/account/logout">Logout</a></li>
+  </ul>
+          
+  {{{body}}}
+    
+    <script src="../../../js/fontawesome.min.js"></script>
+    <script src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+    </script>
+</body>
+</html>
