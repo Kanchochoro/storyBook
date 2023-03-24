@@ -52,8 +52,9 @@ app.set("view options",{layout:"layouts/main"});
 
 
 //router section
-app.use("/account",require("../route/login"));
 app.use("/",require("../route/index"));
+app.use("/account",require("../route/login"));
+
 app.use("/",require("../route/post"));
 app.use("/role",require("../route/role"));
 app.use("/admin",require("../route/admin"));
