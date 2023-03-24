@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
-// const dotenv=require("dotenv");
+ const dotenv=require("dotenv");
 
-// dotenv.config();
+ dotenv.config();
 
 
 module.exports=async function(){
